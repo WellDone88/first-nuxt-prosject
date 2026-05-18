@@ -12,7 +12,7 @@ This is a brilliant survival mechanism called the freeze response. Donkeys evolv
 So, when a donkey refuses to move, it isn't being lazy. It is conducting a high-level safety audit.
 
 We should all be a little more like the donkey: Stop. Think. Ignore the screaming human.</article><br>
-    <NuxtLink to="/secondSite">Dolphins</NuxtLink><br>
-    <NuxtLink to="/Dont-click-it">Figurative Asshole</NuxtLink>
+    <NuxtLink to="/Dolphins">Dolphins</NuxtLink><br>
+    <NuxtLink to="/Assholes">Figurative Asshole</NuxtLink>
   </div>
 </template>
