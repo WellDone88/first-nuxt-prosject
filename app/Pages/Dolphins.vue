@@ -1,9 +1,9 @@
 <template>
-  <div class="max-w-3xl mx-auto px-6 py-16 fade-in">
+  <div class="max-w-3xl mx-auto px-6 py-20 flex flex-col items-center fade-in">
     <!-- Hero Section -->
-    <div class="text-center mb-16 slide-up">
-      <div class="hero-emoji mb-6">🐬</div>
-      <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.1] mb-4" style="font-family: 'Playfair Display', serif;">
+    <div class="text-center mb-20">
+      <div class="text-6xl mb-8">🐬</div>
+      <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.1] mb-6" style="font-family: 'Playfair Display', serif;">
         <span class="text-gradient-blue">The Dark Side of</span>
         <br />
         <span class="text-white/90">Dolphin Smiles</span>
@@ -13,21 +13,21 @@
     </div>
 
     <!-- Content Card -->
-    <article class="glass-card glow-blue p-8 md:p-12 space-y-8">
-      <p class="text-lg leading-relaxed text-white/75">
+    <article class="glass-card glow-blue p-8 md:p-12 space-y-8 w-full">
+      <p class="text-lg leading-relaxed text-white/75 text-center">
         Dolphins have the best PR team in the animal kingdom. We see that permanent,
         adorable grin and think, "Look at that majestic ocean angel! It just wants to
         swim with me and heal my soul."
       </p>
 
-      <div class="glass-card bg-[#00B4D8]/5 border-[#00B4D8]/20 p-6 slide-up">
-        <p class="text-[#00B4D8] font-semibold text-sm tracking-wider uppercase mb-2">The Reality</p>
-        <p class="text-white/90 text-lg leading-relaxed">
+      <div class="glass-card bg-[#00B4D8]/8 border-[#00B4D8]/25 p-6">
+        <p class="text-[#00B4D8] font-semibold text-sm tracking-wider uppercase mb-2 text-center">The Reality</p>
+        <p class="text-white/90 text-lg leading-relaxed text-center">
           Dolphins are the frat boys of the ocean.
         </p>
       </div>
 
-      <p class="text-lg leading-relaxed text-white/75">
+      <p class="text-lg leading-relaxed text-white/75 text-center">
         That "smile" isn't happiness; it's just how their skulls are shaped.
         Underneath that cute exterior lies a creature of pure, chaotic intelligence.
         Dolphins don't just swim — they boredom-shop for entertainment.
@@ -35,10 +35,10 @@
 
       <div class="divider" />
 
-      <p class="text-white/50 text-sm tracking-wider uppercase">Here's what dolphin behavior actually looks like:</p>
+      <p class="text-white/50 text-sm tracking-wider uppercase text-center">Here's what dolphin behavior actually looks like:</p>
 
       <div class="space-y-4">
-        <div class="glass-card bg-[#0077B6]/5 border-[#00B4D8]/10 p-6 flex gap-4 slide-up">
+        <div class="glass-card bg-[#0077B6]/8 border-[#00B4D8]/15 p-6 flex gap-4">
           <span class="text-3xl">🐡</span>
           <div>
             <p class="text-[#00B4D8] font-bold mb-1">Pufferfish Passing</p>
@@ -50,7 +50,7 @@
           </div>
         </div>
 
-        <div class="glass-card bg-[#0077B6]/5 border-[#00B4D8]/10 p-6 flex gap-4 slide-up">
+        <div class="glass-card bg-[#0077B6]/8 border-[#00B4D8]/15 p-6 flex gap-4">
           <span class="text-3xl">🐦</span>
           <div>
             <p class="text-[#00B4D8] font-bold mb-1">The Seabird Slap</p>
@@ -76,13 +76,12 @@
     </article>
 
     <!-- Navigation Button -->
-    <div class="flex justify-center mt-12 slide-up">
+    <div class="flex justify-center mt-12">
       <NuxtLink to="/"
-        class="btn-primary px-8 py-4 bg-[#D4A843]/10 border border-[#D4A843]/30 text-[#D4A843] rounded-xl
-               hover:bg-[#D4A843]/20 hover:border-[#D4A843]/50 transition-all duration-300 font-medium
-               flex items-center gap-2"
+        class="btn-primary px-8 py-4 bg-[#D4A843]/15 border border-[#D4A843]/40 text-[#D4A843] rounded-xl
+               hover:bg-[#D4A843]/25 hover:border-[#D4A843]/60 transition-all duration-300 font-medium"
       >
-        <span>←</span> Back to Home
+        ← Back to Home
       </NuxtLink>
     </div>
   </div>
