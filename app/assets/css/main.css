@@ -1,118 +1,95 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@layer base {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    background: #080818;
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 168, 67, 0.12), transparent),
-      radial-gradient(ellipse 60% 40% at 80% 50%, rgba(0, 180, 216, 0.08), transparent),
-      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(255, 107, 107, 0.06), transparent);
-    min-height: 100vh;
-    color: #E2E8F0;
-    font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  ::selection {
-    background: rgba(212, 168, 67, 0.3);
-    color: #fff;
-  }
-
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #080818;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: rgba(212, 168, 67, 0.4);
-    border-radius: 3px;
-  }
+body {
+  background-color: #020617 !important;
+  color: #d1d5db;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  margin: 0;
 }
 
-@layer components {
-  .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-  }
-
-  .glow-gold {
-    box-shadow: 0 0 60px rgba(212, 168, 67, 0.12), 0 0 120px rgba(212, 168, 67, 0.06);
-  }
-
-  .glow-blue {
-    box-shadow: 0 0 60px rgba(0, 180, 216, 0.12), 0 0 120px rgba(0, 180, 216, 0.06);
-  }
-
-  .glow-coral {
-    box-shadow: 0 0 60px rgba(255, 107, 107, 0.12), 0 0 120px rgba(255, 107, 107, 0.06);
-  }
-
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #D4A843, #F5E6A3, #D4A843);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-blue {
-    background: linear-gradient(135deg, #0077B6, #00B4D8, #90E0EF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-coral {
-    background: linear-gradient(135deg, #FF6B6B, #FF9A9A, #FF6B6B);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .btn-primary {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    transition: left 0.5s ease;
-  }
-  .btn-primary:hover::before {
-    left: 100%;
-  }
-
-  .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(212, 168, 67, 0.4), transparent);
-    margin: 2rem 0;
-  }
+/* Atmosphere */
+.app-glow-top { 
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 50% -20%, rgba(6, 182, 212, 0.15), transparent);
+  pointer-events: none;
+  z-index: 1;
 }
+
+.app-glow-bottom { 
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 0% 100%, rgba(79, 70, 229, 0.05), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Page Layout */
+.app-shell { position: relative; z-index: 10; display: flex; flex-direction: column; min-height: 100vh; }
+.page-container { max-width: 80rem; margin: 0 auto; padding: 0 2rem; }
+
+/* Header */
+.header-pill { width: 100%; z-index: 50; position: sticky; top: 0; padding: 2rem 0; }
+.nav-pill { 
+  max-width: 60rem; margin: 0 auto; height: 4.5rem; display: flex; align-items: center; justify-content: space-between;
+  background-color: rgba(10, 15, 29, 0.4); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 9999px; padding: 0 2.5rem; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* Typography */
+.logo-text { font-size: 11px; letter-spacing: 0.5em; font-weight: 900; color: #fff; text-transform: uppercase; }
+
+/* Spacing for Navigation Links */
+.nav-links { display: flex; align-items: center; }
+.nav-link { 
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; 
+  color: rgba(255, 255, 255, 0.4); transition: 0.3s; text-decoration: none;
+  margin-left: 3.5rem; /* Gir god avstand mellom lenkene */
+}
+.nav-link:first-child { margin-left: 0; }
+.nav-link:hover { color: #06b6d4; }
+
+.heading-mega { 
+  font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(4rem, 12vw, 12rem); 
+  line-height: 0.8; color: #fff; letter-spacing: -0.05em; 
+}
+
+.section-label { color: #06b6d4; font-size: 10px; font-weight: 900; letter-spacing: 0.6em; text-transform: uppercase; margin-bottom: 2rem; display: block; }
+
+/* Cards */
+.archive-card { 
+  padding: 3rem; background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); 
+  border-radius: 3rem; transition: 0.7s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+.archive-card:hover { border-color: rgba(6, 182, 212, 0.3); background-color: rgba(255, 255, 255, 0.04); transform: translateY(-5px); }
+
+/* Sections */
+.featured-box { 
+  margin-top: 10rem; padding: 6rem; border-radius: 4rem; border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(10, 15, 29, 0.3); backdrop-filter: blur(30px);
+}
+
+.featured-row { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  width: 100%;
+  gap: 2rem;
+}
+
+/* Visuals */
+.visual-card { 
+  aspect-ratio: 16/10; background-color: #0a1225; border-radius: 4rem; border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+}
+
+/* Footer */
+.footer-pill { padding: 6rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
+.footer-title { font-size: 10px; letter-spacing: 0.8em; font-weight: 900; color: rgba(6, 182, 212, 0.4); text-transform: uppercase; }
+
+/* Nuxt Transitions */
+.page-enter-active { transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.page-enter-from { opacity: 0; filter: blur(20px); transform: translateY(20px); }
